@@ -24,7 +24,9 @@ https://github.com/mlperf/training_policies/edit/master/training_rules.adoc
 ## 云端训练
 - 主流模型覆盖总和：支持工业界主流模型的数量，单位：个。
 - Time2train：在特定数据集上训练一个模型使其达到特定精度的用时。单位：sec（秒）。特定精度的定义如下：
+
 TODO: 以下数据来自ML-Perf，需有所调整
+
 |===
 |领域|问题 |数据集 |特定精度
 
@@ -37,6 +39,7 @@ TODO: 以下数据来自ML-Perf，需有所调整
 |Commerce |Recommendation |1TB Click Logs|0.8025 AUC
 |Research |Reinforcement learning |Go |50% win rate vs. checkpoint
 |===
+
 - 加速比&加速效率：单卡下，相同模型在混合精度模式及FP32模式下的吞吐比。
 - 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。
 
