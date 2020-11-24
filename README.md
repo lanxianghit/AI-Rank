@@ -20,14 +20,17 @@ AI-Rank关注被测AI方案在不同运行环境下的表现：
 
 我们将不断更新迭代，逐步完善以上各种评估场景。
 
+# 成果
+目前AI-Rank已收到XXX个数据，请参见[《AI-Rank Result》](result.md)
+
 # 如何参与评估？
 参与AI-Rank的评估，分为提交、审核、公布三个阶段。
 ## 提交
 提交阶段，参与方首先需注册GitHub并创建专属repo。然后将所有评审资料提交到该GitHub repo中。之后，向AI-Rank官方邮箱（XXX@XXX.com）发送申请评估邮件。AI-Rank将在5个工作日内予以回复是否受理，并在回复后10个工作日内启动审核工作。
 不同赛道所需提交的资料不同，具体参考如下链接：
-- [硬件赛道](./hardware)
-- [软件赛道](./software)
-- [特色赛道](./nationalization)
+- [硬件赛道](./hardware.md)
+- [软件赛道](./software.md)
+- [特色赛道](./nationalization.md)
 
 ## 审核
 审核阶段分为3个子阶段：初审、答辩、确认
