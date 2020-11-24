@@ -28,16 +28,16 @@ https://github.com/mlperf/training_policies/edit/master/training_rules.adoc
 TODO: 以下数据来自ML-Perf，需有所调整
 
 
-|领域|问题 |数据集 |特定精度
-
-|Vision |Image classification |ImageNet |75.90% classification
-| |Object detection (light weight) |COCO |23.0% mAP
-| |Object detection (heavy weight) |COCO |0.377 Box min AP and 0.339 Mask min AP
-|Language |Translation (recurrent) |WMT English-German |24.0 Sacre BLEU
-| |Translation (non-recurrent) |WMT English-German |25.00 BLEU
-| |NLP |Wikipedia 2020/01/01 |0.712 Mask-LM accuracy
-|Commerce |Recommendation |1TB Click Logs|0.8025 AUC
-|Research |Reinforcement learning |Go |50% win rate vs. checkpoint
+|领域|问题 |数据集 |特定精度|
+|-----------------------|-----------------------|-----------------------|-----------------------|
+|Vision |Image classification |ImageNet |75.90% classification|
+| |Object detection (light weight) |COCO |23.0% mAP|
+| |Object detection (heavy weight) |COCO |0.377 Box min AP and 0.339 Mask min AP|
+|Language |Translation (recurrent) |WMT English-German |24.0 Sacre BLEU|
+| |Translation (non-recurrent) |WMT English-German |25.00 BLEU|
+| |NLP |Wikipedia 2020/01/01 |0.712 Mask-LM accuracy|
+|Commerce |Recommendation |1TB Click Logs|0.8025 AUC|
+|Research |Reinforcement learning |Go |50% win rate vs. checkpoint|
 
 - 加速比&加速效率：单卡下，相同模型在混合精度模式及FP32模式下的吞吐比。
 - 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。
