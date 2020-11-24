@@ -1,5 +1,7 @@
 ML-Perf参考文档：
 https://github.com/mlperf/training_policies/edit/master/training_rules.adoc
+https://arxiv.org/pdf/1910.01500.pdf
+
 
 # 软件赛道
 软件赛道主要评估深度学习框架&模型，在同等硬件、同等数据集、同等网络结构前提下的性能表现。模型选取中国现阶段工业界高频使用的模型，对每个模型的执行性能进行评估。
@@ -18,6 +20,8 @@ https://github.com/mlperf/training_policies/edit/master/training_rules.adoc
 |V100-SXM2-16GB | Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz | 业内最常用显卡 |
 | Intel             | |  |
 | 华为              | |  |
+
+ML-Perf硬件数据参考： https://github.com/mlcommons/hpc_results_v0.7/blob/main/CSCS/systems/daint_gpu_n128_tf2.2.0.json
 
 # 主要指标
 
@@ -58,6 +62,6 @@ TODO: 以下数据来自ML-Perf，需有所调整
 # 提交数据
 
 参考
-
+https://github.com/AIIABenchmark/AIIA-DNN-benchmark
 https://github.com/mlperf/training/blob/master/benchmark_readme_template.md
 https://github.com/mlperf/training/tree/master/image_classification
