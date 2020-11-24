@@ -56,5 +56,8 @@ TODO: 以下数据来自ML-Perf，需有所调整
 - 内存占用：推理期间，推理模型最大使用内存量。单位：MB。
 
 # 提交数据
-提交数据
+
+参考
+
 https://github.com/mlperf/training/blob/master/benchmark_readme_template.md
+https://github.com/mlperf/training/tree/master/image_classification
