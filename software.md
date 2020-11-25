@@ -72,19 +72,19 @@ TODO: 以下数据来自ML-Perf，需有所调整
 
 提交目录结构示例如下：
 
-* <system name>
-** <system information>
-*** <model1>
-**** <code>
-**** <data>
-**** <log>
-**** <report>
-*** <model2>
-**** <code>
-**** <data>
-**** <log>
-**** <report>
-** <submitter information>
+- system name
+    - system information
+    - model1
+        - code
+        - data
+        - log
+        - report
+    - model2
+        - code
+        - data
+        - log
+        - report
+    - submitter information
 
 ## 日志格式要求
 日志格式样例如下：
