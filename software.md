@@ -75,12 +75,12 @@ TODO: 以下数据来自ML-Perf，需有所调整
 ```
 说明：
 - 每行以`AI-Rank-log`开始，后接时间戳
-- test_begin：测试开始
-- test_finish：测试结束
-- total_use_time：test_finish时间戳 - test_begin时间戳
+- `test_begin`：测试开始
+- `test_finish`：测试结束
+- `total_use_time`：`test_finish`时间戳 - `test_begin`时间戳
 - 训练期间每隔N个epoch进行一次eval测试，N由提交方自定义
-- eval_accuracy：测试的准确率
-- total_epoch_cnt：截至当前执行的epoch个数
+- `eval_accuracy`：测试的准确率
+- `total_epoch_cnt`：截至当前执行的epoch个数
 - 当eval准确率达到该模型相应要求时，停止测试
 
 参考
