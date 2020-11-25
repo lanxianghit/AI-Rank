@@ -51,5 +51,3 @@ AI-Rank将组织领域专家，对提交放提供的资料进行审核，对提�
 
 ## 公布
 由AI-Rank，将确认后的数据，在本GitHub repo中整理、发布。
-
-ML-Perf 提交参考 https://github.com/mlperf/training_policies/blob/master/training_rules.adoc

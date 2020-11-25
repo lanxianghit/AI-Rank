@@ -4,18 +4,22 @@
 - Time2train：在特定数据集上训练一个模型使其达到特定精度的用时。单位：sec（秒）。本指标主要关注框架及模型训练的性能。指标根据参与者提交的运行日志确定。
 
 特定精度的定义如下：
-TODO: 以下数据来自ML-Perf，需有所调整
-
-|领域|问题 |数据集 |特定精度|
-|-----------------------|-----------------------|-----------------------|-----------------------|
-|Vision |Image classification |ImageNet |75.90% classification|
-| |Object detection (light weight) |COCO |23.0% mAP|
-| |Object detection (heavy weight) |COCO |0.377 Box min AP and 0.339 Mask min AP|
-|Language |Translation (recurrent) |WMT English-German |24.0 Sacre BLEU|
-| |Translation (non-recurrent) |WMT English-German |25.00 BLEU|
-| |NLP |Wikipedia 2020/01/01 |0.712 Mask-LM accuracy|
-|Commerce |Recommendation |1TB Click Logs|0.8025 AUC|
-|Research |Reinforcement learning |Go |50% win rate vs. checkpoint|
+|模型名称 | 目标精度|
+|--------------|------------|
+|ResNet50 | 75.90% classification|
+|Mask R-CNN + FPN | -|
+|YOLOv3 | -|
+|DeepLabv3+ | -|
+|HRNet | -|
+|BERT | -|
+|Transformer | -|
+|CycleGAN | -|
+|pix2pix | -|
+|TSM | -|
+|DSSM | -|
+|DeepFM | -|
+|Wide&Deep | -|
+|Word2Vec | -|
 
 - 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。本指标主要关注框架及模型训练的性能。指标根据参与者提交的运行日志确定。
 - 准确率：在eval测试中能够达到的最高准确率。本指标主要关注框架及模型可达到的最好预测精度。指标根据参与者提交的运行日志确定。

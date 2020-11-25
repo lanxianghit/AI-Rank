@@ -1,27 +1,41 @@
-# 硬件赛道
+# 训练指标
 
-## 云端训练
-- Time2train：在特定数据集上训练一个模型使其达到Quality Target时的用时。单位：sec（秒）。
-- 吞吐：单位时间内，能够训练的样本数量。单位：samples/sec(样本数/秒)。
-- 加速比&加速效率：单卡下，相同模型在混合精度模式及FP32模式下的吞吐比。
-- 能耗：每度电（千瓦时），能够训练的样本数量。单位samples/kW·h(样本数/度)。
+- Time2train：在特定数据集上训练一个模型使其达到特定精度的用时。单位：sec（秒）。本指标主要关注被测硬件的计算性能。指标根据参与者提交的运行日志确定。
 
-## 云端推理
-- 时延：完成1次推理，所需时间。单位：ms（毫秒）
-- 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。
-- 能耗：每度电，能够推理的样本数量。单位samples/kW·h(样本数/度)。
+特定精度的定义如下：
+|模型名称 | 目标精度|
+|--------------|------------|
+|ResNet50 | 75.90% classification|
+|Mask R-CNN + FPN | -|
+|BERT | -|
+|Transformer | -|
 
-## 终端推理
-- 时延：完成1次推理，所需时间。单位：ms（毫秒）
-- 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。
-- 能耗：每瓦秒，能够推理的样本数量。单位samples/W*sec(样本数/瓦秒)。
+- 吞吐：单位时间内，能够推理的样本数量。单位：samples/sec(样本数/秒)。本指标主要关注被测硬件的性能。指标根据参与者提交的运行日志确定。
+- 加速比&加速效率：单张显卡Time2train和多张显卡Time2train的比率。本指标主要关注多卡并行训练的性能效果，尤其是硬件建通信机制的性能。指标根据参与者提交的运行日志换算获得。
+- 能耗：我们期望能够客观的评估被测硬件的能耗情况，但暂未找到公平、可审核的方法。本指标将在后续提供评估方法。
 
-# 提交数据
 
-# 主要测试结果
+## 日志格式要求
+日志格式样例如下：
+```
+- AI-Rank-log 1558631910.424 test_begin
+- AI-Rank-log 1558631912.424 eval_accuracy:0.16753999888896942, total_epoch_cnt:2
+- AI-Rank-log 1558631913.424 eval_accuracy:0.3207400143146515, total_epoch_cnt:4
+- AI-Rank-log 1558631914.424 eval_accuracy:0.4756399989128113, total_epoch_cnt:6
+- AI-Rank-log 1558631915.424 eval_accuracy:0.6468799710273743, total_epoch_cnt:8
+- AI-Rank-log 1558631916.424 eval_accuracy:0.7605400085449219, total_epoch_cnt:10
+- AI-Rank-log 1558631922.454 test_finish
+- AI-Rank-log 1558631918.454 target_quality_time:8.03sec
+- AI-Rank-log 1558631918.455 avg_ips:1190images/sec
 
-| Processor                  | Single Precision             | Int8 inputs/32 bit math | 
-|-----------------------|------------------|-----------------------|
-| Raspberry Pi 3        | Conv                         | GEMM, Sparse GEMM               |
-| iPhone 6              |                              | GEMM, Sparse GEMM               |
-| iPhone 7              |                              | GEMM, Sparse GEMM               |
+```
+说明：
+- 每行以`AI-Rank-log`开始，后接时间戳
+- `test_begin`：测试开始
+- `test_finish`：测试结束
+- `eval_accuracy`：测试的准确率
+- `total_epoch_cnt`：截至当前执行的epoch个数
+- `target_quality_time`：`eval_accuracy达到AI-Rank要求的精度时的时间戳` - `test_begin时间戳`
+- `avg_ips`：`total_epoch_cnt` * `每个epoch的样本总数` / `total_use_time`
+- 训练期间每隔N个epoch进行一次eval测试，N由提交方自定义
+- 当eval准确率达到该模型相应要求后，测试即可停止
